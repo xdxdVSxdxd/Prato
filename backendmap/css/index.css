@@ -1,0 +1,225 @@
+body,html{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;
+	color: #000000;
+	font: 22px 'Work Sans','Helvetica Neue', sans-serif;
+	font-weight: 100;
+	overflow: hidden;
+}
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes fadecolorblacktored {
+  0%   {color: black;}
+  50%  {color: red;}
+  100% {color: black;}
+}
+
+/* Standard syntax */
+@keyframes fadecolorblacktored {
+  0%   {color: black;}
+  50%  {color: red;}
+  100% {color: black;}
+}
+
+
+#container{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.locationlink, .locationlink:visited{
+	display: block;
+	float: left;
+	padding: 30px;
+	margin: 20px;
+	text-decoration: none;
+	color: #000000;
+	font: 45px 'Work Sans','Helvetica Neue', sans-serif;
+}
+
+.locationlink:hover{
+	-webkit-animation-name: fadecolorblacktored; /* Safari 4.0 - 8.0 */
+  	-webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+  	animation-name: fadecolorblacktored;
+  	animation-duration: 1s;
+}
+
+
+#map{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	z-index: 100;
+	background: #000000;
+	color: #FF0000;
+}
+
+#addstuff{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 30px;
+	height: 30px;
+	margin: 0px;
+	padding: 20px;
+	overflow: hidden;
+	z-index: 200;
+	background: #000000;
+	color: #FF0000;
+	font: bold 45px Arial, sans-serif;
+	line-height: 30px;
+	text-align: center;
+}
+
+#addstuff:hover{
+	color: #FFFF00;	
+}
+
+#addpanel{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	z-index: 400;
+	background: #000000;
+	color: #FFFFFF;
+	font: 20px 'Work Sans','Helvetica Neue', sans-serif;
+	line-height: 25px;
+	display: none;
+}
+
+.head1{
+	margin-bottom: 20px;
+	padding: 30px;
+	color: #FFFFFF;
+	font: 45px 'Work Sans','Helvetica Neue', sans-serif;
+}
+
+.head2{
+	margin-bottom: 10px;
+	padding: 30px;
+	color: #FFFFFF;
+	font: 30px 'Work Sans','Helvetica Neue', sans-serif;
+}
+
+.head3{
+	margin-bottom: 7px;
+	padding: 30px;
+	color: #FFFFFF;
+	font: 22px 'Work Sans','Helvetica Neue', sans-serif;
+}
+
+.item{
+	background: #FF0000;
+	color: #FFFFFF;
+	width: 200px;
+	text-align: center;
+	padding: 20px;
+	margin: 20px;
+	font: 18px 'Work Sans','Helvetica Neue', sans-serif;
+}
+
+.item:hover{
+	-webkit-animation-name: fadeitem; /* Safari 4.0 - 8.0 */
+  	-webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+  	animation-name: fadeitem;
+  	animation-duration: 1s;
+}
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes fadeitem {
+  0%   {color: #FFFFFF; background: #FF0000; }
+  50%  {color: #000000; background: #FFFF00; }
+  100% {color: #FFFFFF; background: #FF0000; }
+}
+
+/* Standard syntax */
+@keyframes fadeitem {
+  0%   {color: #FFFFFF; background: #FF0000; }
+  50%  {color: #000000; background: #FFFF00; }
+  100% {color: #FFFFFF; background: #FF0000; }
+}
+
+#clickonmap{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 200px;
+	margin: 0px;
+	padding: 20px;
+	z-index: 200;
+	background: #000000;
+	color: #FFFF00;
+	font: bold 25px Arial, sans-serif;
+	text-align: center;
+	display: none;
+}
+
+#getcontentpanel{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	z-index: 400;
+	background: #000000;
+	color: #FFFFFF;
+	font: 20px 'Work Sans','Helvetica Neue', sans-serif;
+	line-height: 25px;
+	display: none;
+}
+
+
+.inputaddcontent{
+	background: #FFFFFF;
+	color: #000000;
+	font: 22px 'Work Sans','Helvetica Neue', sans-serif;
+	line-height: 25px;
+	border: 0px;
+	padding: 20px;
+	margin: 20px;
+}
+
+.submitbutton{
+	border: 0px;
+	background: #FF0000;
+	color: #FFFFFF;
+	padding: 20px;
+	margin: 20px;
+	font: 30px 'Work Sans','Helvetica Neue', sans-serif;
+}
+
+.submitbutton:hover{
+	background: #FFFF00;
+	color: #000000;
+}
+
+
+.infowindow{
+	padding: 20px;
+}
+
+.infowindowtext{
+	color: #000000;
+	font: 16px 'Work Sans','Helvetica Neue', sans-serif;
+}

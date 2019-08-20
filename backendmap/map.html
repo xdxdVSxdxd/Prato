@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /-->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Prato</title>
+</head>
+<body>
+
+    
+
+    <div id="map"></div>
+
+    <div id="addstuff">+</div>
+
+    <div id="clickonmap">CLICK ON THE MAP TO PLACE CONTENT</div>
+
+    <div id="addpanel">
+        <div class="head1">Add items</div>
+        <div class="item" id="addtext">TEXT / EMBED</div>
+        <div class="item" id="addimage">IMAGE</div>
+        <div class="item" id="addsound">SOUND</div>
+        <div class="item" id="addkml">KML</div>
+
+    </div>
+
+
+    <div id="getcontentpanel">
+        <div class="head1">Add Content</div>
+
+        <div class="formclass" id="formtext">
+            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadtext.php">
+                <div class="head3">Enter text</div>
+                <textarea rows="4" cols="40" id="textlabel" name="textlabel" class="inputaddcontent"></textarea>
+                <input type="hidden" id="textidlocation" name="textidlocation" class="inputaddcontent" />
+                <input type="hidden" id="textlatitude" name="textlatitude" class="inputaddcontent" />
+                <input type="hidden" id="textlongitude" name="textlongitude" class="inputaddcontent" />
+                <input type="submit" name="submit" class="submitbutton" />
+            </form>           
+        </div>
+
+        <div class="formclass" id="formimage">
+            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadimage.php">
+                <div class="head3">Upload image (png, jpg, max 2MB)</div>
+                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                <input type="file" id="addimageinput" name="imagefile" class="inputaddcontent" />
+                <input type="hidden" id="imageidlocation" name="imageidlocation" class="inputaddcontent" />
+                <input type="hidden" id="imagelatitude" name="imagelatitude" class="inputaddcontent" />
+                <input type="hidden" id="imagelongitude" name="imagelongitude" class="inputaddcontent" />
+                <input type="text" id="imagelabel" name="imagelabel" class="inputaddcontent" />
+                <input type="submit" name="submit" class="submitbutton" />
+            </form>
+        </div>
+
+        <div class="formclass" id="formaudio">
+            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadaudio.php">
+                <div class="head3">Upload audio file (mp3, wav, ogg, max 2MB)</div>
+                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                <input type="file" id="addaudioinput" name="audiofile" class="inputaddcontent" />
+                <input type="hidden" id="audioidlocation" name="audioidlocation" class="inputaddcontent" />
+                <input type="hidden" id="audiolatitude" name="audiolatitude" class="inputaddcontent" />
+                <input type="hidden" id="audiolongitude" name="audiolongitude" class="inputaddcontent" />
+                <input type="text" id="audiolabel" name="audiolabel" class="inputaddcontent" />
+                <input type="submit" name="submit" class="submitbutton" />
+            </form>           
+        </div>
+
+
+        <div class="formclass" id="formkml">
+            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadkml.php">
+                <div class="head3">Upload KML/KMZ ( max 6MB)</div>
+                <input type="hidden" name="MAX_FILE_SIZE" value="6000000" />
+                <input type="file" id="addkmlinput" name="kmlfile" class="inputaddcontent" />
+                <input type="hidden" id="kmlidlocation" name="kmlidlocation" class="inputaddcontent" />
+                <input type="hidden" id="kmllatitude" name="kmllatitude" class="inputaddcontent" />
+                <input type="hidden" id="kmllongitude" name="kmllongitude" class="inputaddcontent" />
+                <input type="text" id="kmllabel" name="kmllabel" class="inputaddcontent" />
+                <input type="submit" name="submit" class="submitbutton" />
+            </form>
+        </div>
+
+    </div>
+
+
+
+    
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/d3.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBOidPdOErEXVlCWzf4JqMtkJYB4XRsss&callback=initMap" async defer></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
