@@ -19,7 +19,12 @@
 
 	$res["assets"] = array();
 
-	$q2 = $conn->prepare( "SELECT id,t,text,image,audio,lat,lng, kml FROM assets WHERE idlocation = :id" );
+	$queryb = "SELECT id,t,text,image,audio,lat,lng, kml,keywords FROM assets WHERE idlocation = :id";
+	if(isset($_REQUEST["keywords"]) && $_REQUEST["keywords"]!="*" ){
+		$keywords = trim( strtoupper( $_REQUEST["keywords"] ) );
+		$queryb = $queryb . " AND keywords LIKE '%" . str_replace("'", "", $_REQUEST["keywords"]) . "%'";
+	}
+	$q2 = $conn->prepare( $queryb );
 	$q2->execute(array(':id' => $_REQUEST["location"]) );
 	while ($row = $q2->fetch()){
 		$o = new stdClass();
@@ -31,6 +36,7 @@
 		$o->kml = $row["kml"];
 		$o->lat = floatval($row["lat"]);
 		$o->lng = floatval($row["lng"]);
+		$o->keywords = $row["keywords"];
 		$res["assets"][] = $o;
 	}
 

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
@@ -45,9 +46,11 @@
         <div class="head1">Add Content</div>
 
         <div class="formclass" id="formtext">
-            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadtext.php">
-                <div class="head3">Enter text</div>
-                <textarea rows="4" cols="40" id="textlabel" name="textlabel" class="inputaddcontent"></textarea>
+            <form enctype="multipart/form-data" method="POST" accept-charset="UTF-8" action="http://youthinthe.city/Prato/uploadapi/uploadtext.php">
+                <div class="head3">Enter text / embed code / link</div>
+                <textarea rows="4" cols="40" id="textlabel" name="textlabel" class="inputaddcontent"></textarea><br />
+                <div class="itemlabel">enter keyword</div><br />
+                <input type="text" id="textkeyword" name="textkeyword" class="inputaddcontent" /><br />
                 <input type="hidden" id="textidlocation" name="textidlocation" class="inputaddcontent" />
                 <input type="hidden" id="textlatitude" name="textlatitude" class="inputaddcontent" />
                 <input type="hidden" id="textlongitude" name="textlongitude" class="inputaddcontent" />
@@ -56,41 +59,51 @@
         </div>
 
         <div class="formclass" id="formimage">
-            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadimage.php">
+            <form enctype="multipart/form-data" method="POST" accept-charset="UTF-8" action="http://youthinthe.city/Prato/uploadapi/uploadimage.php">
                 <div class="head3">Upload image (png, jpg, max 2MB)</div>
-                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
-                <input type="file" id="addimageinput" name="imagefile" class="inputaddcontent" />
+                <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
+                <input type="file" id="addimageinput" name="imagefile" class="inputaddcontent" /><br />
                 <input type="hidden" id="imageidlocation" name="imageidlocation" class="inputaddcontent" />
                 <input type="hidden" id="imagelatitude" name="imagelatitude" class="inputaddcontent" />
                 <input type="hidden" id="imagelongitude" name="imagelongitude" class="inputaddcontent" />
-                <input type="text" id="imagelabel" name="imagelabel" class="inputaddcontent" />
+                <div class="itemlabel">enter label for image</div><br />
+                <input type="text" id="imagelabel" name="imagelabel" class="inputaddcontent" /><br />
+                <div class="itemlabel">enter keyword</div><br />
+                <input type="text" id="imagekeyword" name="imagekeyword" class="inputaddcontent" /><br />
                 <input type="submit" name="submit" class="submitbutton" />
             </form>
         </div>
 
         <div class="formclass" id="formaudio">
-            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadaudio.php">
+            <form enctype="multipart/form-data" method="POST" accept-charset="UTF-8" action="http://youthinthe.city/Prato/uploadapi/uploadaudio.php">
                 <div class="head3">Upload audio file (mp3, wav, ogg, max 2MB)</div>
-                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
-                <input type="file" id="addaudioinput" name="audiofile" class="inputaddcontent" />
+                <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
+                <input type="file" id="addaudioinput" name="audiofile" class="inputaddcontent" /><br />
                 <input type="hidden" id="audioidlocation" name="audioidlocation" class="inputaddcontent" />
                 <input type="hidden" id="audiolatitude" name="audiolatitude" class="inputaddcontent" />
-                <input type="hidden" id="audiolongitude" name="audiolongitude" class="inputaddcontent" />
-                <input type="text" id="audiolabel" name="audiolabel" class="inputaddcontent" />
+                <input type="hidden" id="audiolongitude" name="audiolongitude" class="inputaddcontent" /><br />
+                <div class="itemlabel">enter label for audio</div><br />
+                <input type="text" id="audiolabel" name="audiolabel" class="inputaddcontent" /><br />
+                <div class="itemlabel">enter keyword</div><br />
+                <input type="text" id="audiokeyword" name="audiokeyword" class="inputaddcontent" /><br />
                 <input type="submit" name="submit" class="submitbutton" />
             </form>           
         </div>
 
 
         <div class="formclass" id="formkml">
-            <form enctype="multipart/form-data" method="POST" action="http://164.132.225.138/Prato/uploadapi/uploadkml.php">
+            <form enctype="multipart/form-data" method="POST" accept-charset="UTF-8" action="http://youthinthe.city/Prato/uploadapi/uploadkml.php">
                 <div class="head3">Upload KML/KMZ ( max 6MB)</div>
                 <input type="hidden" name="MAX_FILE_SIZE" value="6000000" />
-                <input type="file" id="addkmlinput" name="kmlfile" class="inputaddcontent" />
+                <div class="itemlabel">load kml/kmz file</div><br />
+                <input type="file" id="addkmlinput" name="kmlfile" class="inputaddcontent" /><br />
                 <input type="hidden" id="kmlidlocation" name="kmlidlocation" class="inputaddcontent" />
                 <input type="hidden" id="kmllatitude" name="kmllatitude" class="inputaddcontent" />
                 <input type="hidden" id="kmllongitude" name="kmllongitude" class="inputaddcontent" />
-                <input type="text" id="kmllabel" name="kmllabel" class="inputaddcontent" />
+                <div class="itemlabel">enter label for kml</div><br />
+                <input type="text" id="kmllabel" name="kmllabel" class="inputaddcontent" /><br />
+                <div class="itemlabel">enter keyword</div><br />
+                <input type="text" id="kmlkeyword" name="kmlkeyword" class="inputaddcontent" /><br />
                 <input type="submit" name="submit" class="submitbutton" />
             </form>
         </div>
@@ -98,10 +111,30 @@
     </div>
 
 
+    <div id="demoselector">
+        <div id="demoselectorpadded">
+            <h4>Seleziona</h4>
+            <select id="demoselect">
+                <option value="-1" SELECTED>Nessuno</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="legenddiv">
+        <svg id="legendsvg"></svg>
+    </div>
+
+    <div id="filter">
+        Filter by tag<br />
+        <select name="filterselect" id="filterselect">
+     
+        </select>
+     </div>
 
     
 	<script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/d3.js"></script>
+    <script type="text/javascript" src="js/d3-legend.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBOidPdOErEXVlCWzf4JqMtkJYB4XRsss&callback=initMap" async defer></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
